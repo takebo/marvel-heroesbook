@@ -1,0 +1,65 @@
+.Details {
+  padding: 20px;
+}
+
+.Details .hero {
+  color: #fafafa;
+  display: grid;
+  grid-template-columns: 300px repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 40px;
+}
+.Details .hero-info {
+  /* text-align: center; */
+}
+.Details .hero-name {
+}
+.Details .hero-photo {
+  text-align: center;
+}
+.Details .hero-photo img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.Details .hero-description {
+}
+.Details .hero-urls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Details .Comics,
+.Details .Events,
+.Details .Series,
+.Details .Stories {
+  margin: 100px 0;
+  border-top: 1px solid #999;
+}
+
+.Details .Comics h2,
+.Details .Events h2,
+.Details .Series h2,
+.Details .Stories h2 {
+  color: #fafafa;
+  font-weight: normal;
+}
+
+.Details .list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-gap: 60px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.Details .list li a {
+  text-decoration: none;
+}
+
+.Details .title {
+  color: #999;
+  font-size: 14px;
+  display: block;
+}
