@@ -9,8 +9,12 @@ const Header = props => {
         <img src={logo} alt="brand logo" />
       </a>
       <div className="Search">
-        <input type="text" className="SearchInput" placeholder="Search..." />
-        <button className="SearchButton">icon</button>
+        <input
+          type="text"
+          className="SearchInput"
+          placeholder="Find your hero..."
+        />
+        <button className="SearchButton" />
       </div>
     </header>
   )
