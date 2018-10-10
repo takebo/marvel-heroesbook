@@ -10,8 +10,11 @@
 }
 .brand {
   display: inline-block;
-  /* width: 50px; */
+  width: 50px;
   overflow: hidden;
+}
+.brand img {
+  vertical-align: middle;
 }
 .Search {
   float: right;
@@ -22,4 +25,27 @@
   padding: 0 10px;
   margin: 0;
   border: 0;
+  vertical-align: middle;
+  display: none;
+}
+.SearchButton {
+  background-color: transparent;
+  background-image: url('../../assets/icon-search.svg');
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (min-width: 576px) {
+  .brand {
+    width: auto;
+  }
+  .SearchInput {
+    display: inline-block;
+  }
 }
