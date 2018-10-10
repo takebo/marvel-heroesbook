@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import {marvelApi as config} from '../../config/config'
 
 import './Details.css'
 
@@ -17,15 +18,17 @@ class Details extends Component {
   }
 
   apiHero(id) {
-    const apiUrl = 'http://gateway.marvel.com/v1/public/characters/' + id
-    const publickey = '0ae171b5759a095e9a68bb5b446a9674'
+    const apiUrl = `${config.baseUrl}/${id}`
+    const params = {
+      ts: config.ts,
+      hash: config.hash,
+      apikey: config.apikey
+    }
 
     axios
       .get(apiUrl, {
         params: {
-          ts: 'takebo',
-          hash: '46c80334dd17064c5fe26fb8b536dce4',
-          apikey: publickey
+          ...params
         }
       })
       .then(res => {
@@ -41,10 +44,8 @@ class Details extends Component {
     axios
       .get(apiUrl + '/comics', {
         params: {
-          ts: 'takebo',
-          hash: '46c80334dd17064c5fe26fb8b536dce4',
-          apikey: publickey,
-          limit: 18
+          ...params,
+          limit: 8
         }
       })
       .then(res => {
@@ -60,10 +61,8 @@ class Details extends Component {
     axios
       .get(apiUrl + '/events', {
         params: {
-          ts: 'takebo',
-          hash: '46c80334dd17064c5fe26fb8b536dce4',
-          apikey: publickey,
-          limit: 18
+          ...params,
+          limit: 8
         }
       })
       .then(res => {
@@ -79,10 +78,8 @@ class Details extends Component {
     axios
       .get(apiUrl + '/series', {
         params: {
-          ts: 'takebo',
-          hash: '46c80334dd17064c5fe26fb8b536dce4',
-          apikey: publickey,
-          limit: 18
+          ...params,
+          limit: 8
         }
       })
       .then(res => {
@@ -98,10 +95,8 @@ class Details extends Component {
     axios
       .get(apiUrl + '/stories', {
         params: {
-          ts: 'takebo',
-          hash: '46c80334dd17064c5fe26fb8b536dce4',
-          apikey: publickey,
-          limit: 18
+          ...params,
+          limit: 8
         }
       })
       .then(res => {
@@ -124,12 +119,9 @@ class Details extends Component {
       return (
         <div key={hero.id} className="hero">
           <div className="hero-photo">
+            <button className="favorite">❤</button>
             <img
-              src={
-                hero.thumbnail.path +
-                '/portrait_uncanny.' +
-                hero.thumbnail.extension
-              }
+              src={hero.thumbnail.path + '.' + hero.thumbnail.extension}
               alt={hero.name}
             />
           </div>
