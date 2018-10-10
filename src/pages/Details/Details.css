@@ -5,50 +5,89 @@
 .Details .hero {
   color: #fafafa;
   display: grid;
-  grid-template-columns: 300px repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 40px;
+  /* grid-template-columns: 300px repeat(auto-fill, minmax(300px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 0px 40px;
+  max-width: 1440px;
+  margin: auto;
 }
 .Details .hero-info {
-  /* text-align: center; */
+  text-align: center;
 }
 .Details .hero-name {
+  font-size: 40px;
 }
 .Details .hero-photo {
   text-align: center;
+  position: relative;
+}
+.Details .hero-photo .favorite {
+  font-size: 40px;
+  padding: 5px;
+  top: 10px;
+  right: 10px;
 }
 .Details .hero-photo img {
   width: 100%;
-  max-width: 300px;
+
+  object-fit: cover;
 }
 
 .Details .hero-description {
+  border: 1px solid #272a2e;
+  font-size: 16px;
+  line-height: 1.6em;
+  padding: 15px;
 }
 .Details .hero-urls {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+.Details .hero-urls li {
+  display: inline-block;
+  vertical-align: middle;
+}
+.Details .hero-urls li a {
+  color: #e7b54e;
+  padding: 0 15px;
+  line-height: 40px;
+  border: 1px solid #272a2e;
+  border-top: 0;
+  display: inline-block;
+  text-decoration: none;
+}
+.detail-favorite {
+  background-color: transparent;
+  font-size: 40px;
+  line-height: 1;
+  padding: 0 15px;
+  height: 40px;
+  border: 1px solid #272a2e;
+  border-top: 0;
+  display: inline-block;
+}
 
 .Details .Comics,
 .Details .Events,
 .Details .Series,
 .Details .Stories {
-  margin: 100px 0;
-  border-top: 1px solid #999;
+  margin: 100px auto;
+  border-top: 4px solid #272a2e;
+  max-width: 1440px;
 }
 
-.Details .Comics h2,
-.Details .Events h2,
-.Details .Series h2,
-.Details .Stories h2 {
-  color: #fafafa;
-  font-weight: normal;
+.Details h2 {
+  color: #e7b54e;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .Details .list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  grid-gap: 60px 20px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-gap: 30px 10px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -57,9 +96,23 @@
 .Details .list li a {
   text-decoration: none;
 }
+.Details .list li a img {
+  width: 100%;
+  object-fit: cover;
+}
 
 .Details .title {
   color: #999;
   font-size: 14px;
   display: block;
+}
+
+@media (min-width: 576px) {
+  .Details .hero-info {
+    text-align: left;
+  }
+
+  .Details h2 {
+    text-align: left;
+  }
 }
