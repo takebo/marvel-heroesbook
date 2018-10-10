@@ -17,6 +17,8 @@ const privateKey = 'YOUR_PRIVATE_KEY'
 
 ## Bibliotecas Utilizadas
 
+-   [React](https://github.com/facebook/react/)
+-   [Create React App](https://github.com/facebook/create-react-app)
 -   [Redux](http://redux.js.org/)
 -   [React Router](https://reacttraining.com/react-router/)
 -   [Crypto-js](https://github.com/brix/crypto-js)
