@@ -1,3 +1,13 @@
+:root {
+  --yellow: #e7b54e;
+  --red: #eb2328;
+  --dark-red: #9f0013;
+  --dark: #272a2e;
+  --darker: #1c1c1c;
+  --white: #fafafa;
+  --gray: #999;
+}
+
 html {
   height: 100vh;
 }
@@ -16,6 +26,50 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 #root {
-  background-color: #1c1c1c;
+  background-color: var(--darker);
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.message {
+  color: var(--gray);
+  text-align: center;
+  font-size: 32px;
+  font-weight: normal;
+}
+.message.error {
+  color: var(--dark-red);
+}
+.message.success {
+  color: var(--white);
+}
+.message.warning {
+  color: var(--yellow);
+}
+
+.text-yellow {
+  color: var(--yellow);
+}
+.text-red {
+  color: var(--red);
+}
+.text-dark-red {
+  color: var(--dark-red);
+}
+.text-dark {
+  color: var(--dark);
+}
+.text-darker {
+  color: var(--darker);
+}
+.text-gray {
+  color: var(--gray);
+}
+.text-white {
+  color: var(--white);
 }
