@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import axios from 'axios'
 import {marvelApi as config} from '../../config/config'
 
 import './Home.css'
 
-import Footer from '../../components/Footer/Footer'
+import Header from '../../components/Header/Header'
+// import Footer from '../../components/Footer/Footer'
 import Heroes from '../../components/Heroes/Heroes'
 
 class Home extends Component {
@@ -12,20 +14,18 @@ class Home extends Component {
     super(props)
     this.state = {
       heroes: [],
-      params: {
-        limit: 18,
-        offset: 0
-      }
-      // nameStartsWith: null, // Return characters with names that begin with the specified string (e.g. Sp)
-      // orderBy: 'name' // name, modified, -name, -modified
+      search: null
     }
   }
 
-  getHeroes = params => {
+  getHeroes = () => {
     axios
       .get(config.baseUrl, {
         params: {
-          ...this.state.params,
+          limit: 18,
+          offset: 0,
+          orderBy: 'name',
+          nameStartsWith: this.state.search,
           ts: config.ts,
           apikey: config.apikey,
           hash: config.hash
@@ -41,6 +41,20 @@ class Home extends Component {
       })
   }
 
+  onChangeHandler = event => {
+    this.setState({search: event.target.value ? event.target.value : null})
+    if (!event.target.value) {
+      this.getHeroes()
+    }
+  }
+  onKeyPressHandler = event => {
+    if (event.key === 'Enter') {
+      this.getHeroes()
+    }
+  }
+
+  componentDidUpdate() {}
+
   componentDidMount() {
     this.getHeroes()
   }
@@ -48,11 +62,33 @@ class Home extends Component {
   render() {
     return (
       <>
-        <Heroes data={this.state.heroes} />
-        <Footer />
+        <Header
+          changed={this.onChangeHandler}
+          pressed={this.onKeyPressHandler}
+          search={this.searchHandler}
+          keyword={this.props.searched}
+        />
+        <Heroes data={this.state.heroes} favorited={this.props.onFavorited} />
       </>
     )
   }
 }
 
-export default Home
+const mapStateToProps = state => {
+  return {
+    searched: state.search,
+    favorited: state.favorites
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onFavorited: data => dispatch({type: 'FAVORITE', hero: data}),
+    onSearch: event => dispatch({type: 'SEARCH', search: event.target.value})
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home)
