@@ -14,10 +14,14 @@ const List = props => (
           id={hero.id}
           name={hero.name}
           thumbnail={
-            hero.thumbnail.path +
-            '/portrait_uncanny.' +
-            hero.thumbnail.extension
+            hero.thumbnail.path
+              ? hero.thumbnail.path +
+                '/portrait_uncanny.' +
+                hero.thumbnail.extension
+              : hero.thumbnail
           }
+          fav={hero.fav}
+          favorited={props.favorited}
         />
       )
     })}
