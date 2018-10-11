@@ -1,5 +1,5 @@
 .Header {
-  background-color: #272a2e;
+  background-color: var(--dark);
   height: 50px;
   position: fixed;
   top: 0;
@@ -16,36 +16,22 @@
 .brand img {
   vertical-align: middle;
 }
-.Search {
+.navigation {
   float: right;
 }
-.SearchInput {
-  background-color: #272a2e;
-  height: 50px;
-  padding: 0 10px;
-  margin: 0;
-  border: 0;
-  vertical-align: middle;
-  display: none;
-}
-.SearchButton {
-  background-color: transparent;
-  background-image: url('../../assets/icon-search.svg');
-  background-repeat: no-repeat;
-  height: 50px;
-  width: 50px;
-  border: 0;
-  padding: 0;
-  margin: 0;
+.link-item {
+  color: var(--gray);
+  font-size: 14px;
+  text-decoration: none;
   display: inline-block;
-  vertical-align: middle;
+  line-height: 50px;
+  padding: 0 10px;
+  border-left: 1px solid #1c1c1c;
+  border-right: 1px solid #1c1c1c;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .brand {
     width: auto;
-  }
-  .SearchInput {
-    display: inline-block;
   }
 }
