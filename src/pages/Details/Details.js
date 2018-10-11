@@ -4,6 +4,8 @@ import {marvelApi as config} from '../../config/config'
 
 import './Details.css'
 
+import Header from '../../components/Header/Header'
+
 class Details extends Component {
   constructor(props) {
     super(props)
@@ -32,7 +34,6 @@ class Details extends Component {
         }
       })
       .then(res => {
-        console.log(res.data.data.results)
         this.setState({
           character: res.data.data.results
         })
@@ -49,7 +50,6 @@ class Details extends Component {
         }
       })
       .then(res => {
-        console.log(res.data.data.results)
         this.setState({
           comics: res.data.data.results
         })
@@ -66,7 +66,6 @@ class Details extends Component {
         }
       })
       .then(res => {
-        console.log(res.data.data.results)
         this.setState({
           events: res.data.data.results
         })
@@ -83,7 +82,6 @@ class Details extends Component {
         }
       })
       .then(res => {
-        console.log(res.data.data.results)
         this.setState({
           series: res.data.data.results
         })
@@ -100,7 +98,6 @@ class Details extends Component {
         }
       })
       .then(res => {
-        console.log(res.data.data.results)
         this.setState({
           stories: res.data.data.results
         })
@@ -111,6 +108,7 @@ class Details extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0)
     this.apiHero(this.props.match.params.id)
   }
 
@@ -221,25 +219,28 @@ class Details extends Component {
     })
 
     return (
-      <div className="Details">
-        {hero}
-        <div className="Comics">
-          <h2>Comics</h2>
-          <ul className="list">{comics}</ul>
+      <>
+        <Header />
+        <div className="Details">
+          {hero}
+          <div className="Comics">
+            <h2>Comics</h2>
+            <ul className="list">{comics}</ul>
+          </div>
+          <div className="Events">
+            <h2>Events</h2>
+            <ul className="list">{events}</ul>
+          </div>
+          <div className="Series">
+            <h2>Series</h2>
+            <ul className="list">{series}</ul>
+          </div>
+          <div className="Stories">
+            <h2>Stories</h2>
+            <ul className="list">{stories}</ul>
+          </div>
         </div>
-        <div className="Events">
-          <h2>Events</h2>
-          <ul className="list">{events}</ul>
-        </div>
-        <div className="Series">
-          <h2>Series</h2>
-          <ul className="list">{series}</ul>
-        </div>
-        <div className="Stories">
-          <h2>Stories</h2>
-          <ul className="list">{stories}</ul>
-        </div>
-      </div>
+      </>
     )
   }
 }
