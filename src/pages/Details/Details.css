@@ -3,7 +3,7 @@
 }
 
 .Details .hero {
-  color: #fafafa;
+  color: var(--white);
   display: grid;
   /* grid-template-columns: 300px repeat(auto-fill, minmax(300px, 1fr)); */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -34,7 +34,7 @@
 }
 
 .Details .hero-description {
-  border: 1px solid #272a2e;
+  border: 1px solid var(--dark);
   font-size: 16px;
   line-height: 1.6em;
   padding: 15px;
@@ -49,10 +49,10 @@
   vertical-align: middle;
 }
 .Details .hero-urls li a {
-  color: #e7b54e;
+  color: var(--yellow);
   padding: 0 15px;
   line-height: 40px;
-  border: 1px solid #272a2e;
+  border: 1px solid var(--dark);
   border-top: 0;
   display: inline-block;
   text-decoration: none;
@@ -63,7 +63,7 @@
   line-height: 1;
   padding: 0 15px;
   height: 40px;
-  border: 1px solid #272a2e;
+  border: 1px solid var(--dark);
   border-top: 0;
   display: inline-block;
 }
@@ -73,12 +73,12 @@
 .Details .Series,
 .Details .Stories {
   margin: 100px auto;
-  border-top: 4px solid #272a2e;
+  border-top: 4px solid var(--dark);
   max-width: 1440px;
 }
 
 .Details h2 {
-  color: #e7b54e;
+  color: var(--yellow);
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
@@ -102,7 +102,7 @@
 }
 
 .Details .title {
-  color: #999;
+  color: var(--gray);
   font-size: 14px;
   display: block;
 }

@@ -1,7 +1,7 @@
 .Card {
-  background-color: #e7b54e;
+  background-color: var(--yellow);
   position: relative;
-  border: 5px solid #272a2e;
+  border: 5px solid var(--dark);
   /* box-shadow: 0 0 0 1px #e7b54e; */
   transition: all 200ms;
 }
@@ -18,8 +18,8 @@
   transition: all 100ms;
 }
 .CardTitle {
-  background-color: #1c1c1c;
-  color: #e7b54e;
+  background-color: var(--darker);
+  color: var(--yellow);
   font-size: 16px;
   text-transform: uppercase;
   position: absolute;
@@ -32,7 +32,7 @@
 
 .favorite {
   background-color: transparent;
-  color: white;
+  color: var(--white);
   font-size: 30px;
   line-height: 1;
   padding: 10px;
@@ -41,16 +41,16 @@
   top: 0;
   right: 0;
   border: 0;
-  text-shadow: 0 0 4px #272a2e;
+  text-shadow: 0 0 4px var(--dark);
   cursor: pointer;
   transition: all 100ms;
 }
 .favorite:hover {
-  color: #eb2328;
+  color: var(--red);
   font-size: 40px;
   padding: 5px;
-  text-shadow: 0 0 1px #272a2e;
+  text-shadow: 0 0 1px var(--dark);
 }
 .favorite.active {
-  color: #eb2328;
+  color: var(--red);
 }
