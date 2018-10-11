@@ -17,12 +17,12 @@ const privateKey = 'YOUR_PRIVATE_KEY'
 
 ## Bibliotecas Utilizadas
 
--   [React](https://github.com/facebook/react/)
--   [Create React App](https://github.com/facebook/create-react-app)
--   [Redux](http://redux.js.org/)
--   [React Router](https://reacttraining.com/react-router/)
--   [Crypto-js](https://github.com/brix/crypto-js)
--   [Axios](https://github.com/axios/axios)
+- [React](https://github.com/facebook/react/)
+- [Create React App](https://github.com/facebook/create-react-app)
+- [Redux](http://redux.js.org/)
+- [React Router](https://reacttraining.com/react-router/)
+- [Crypto-js](https://github.com/brix/crypto-js)
+- [Axios](https://github.com/axios/axios)
 
 ---
 
@@ -37,14 +37,14 @@ $ npm start
 
 ## Implementações
 
--   [x] Listagem de super heróis.
--   [ ] Listagem personagens favoritados.
--   [ ] Paginação.
--   [ ] Ordenação da lista de heróis.
--   [ ] Criar mais filtros.
--   [ ] Opção para favoritar o herói na pagina de listagem e detalhes.
--   [x] Layout responsivo.
--   [x] Rotas.
--   [x] Consumo de API.
--   [ ] Redux.
--   [ ] Testes de layout e de integração.
+- [x] Listagem de super heróis.
+- [x] Listagem personagens favoritados.
+- [ ] Paginação.
+- [ ] Ordenação da lista de heróis.
+- [ ] Criar mais filtros.
+- [ ] Opção para favoritar o herói na pagina de listagem e detalhes.
+- [x] Layout responsivo.
+- [x] Rotas.
+- [x] Consumo de API.
+- [ ] Redux.
+- [ ] Testes de layout e de integração.
