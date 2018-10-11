@@ -1,20 +1,25 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './Header.css'
 import logo from '../../logo.svg'
+
+import Search from './Search/Search'
 
 const Header = props => {
   return (
     <header className="Header">
-      <a href="/" className="brand">
+      <Link to="/" className="brand">
         <img src={logo} alt="brand logo" />
-      </a>
-      <div className="Search">
-        <input
-          type="text"
-          className="SearchInput"
-          placeholder="Find your hero..."
+      </Link>
+      <div className="navigation">
+        <Link to="/favorites" className="link-item">
+          My Favorites
+        </Link>
+        <Search
+          changed={props.changed}
+          pressed={props.pressed}
+          search={props.search}
         />
-        <button className="SearchButton" />
       </div>
     </header>
   )
