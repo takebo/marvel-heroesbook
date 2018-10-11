@@ -21,8 +21,8 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/hero/:id" component={Details} />
-        <Route path="/favorites" component={Favorites} />
+        <Route path="/hero/:id" exact component={Details} />
+        <Route path="/favorites" exact component={Favorites} />
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>
